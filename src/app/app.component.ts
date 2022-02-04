@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   // Link to our api, pointing to localhost
   API = 'http://localhost:3000';
 
-  // Declare empty list of people
+  // Declare empty list of tasks
   tasks: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       }, (error: any) => {console.log(error);});
   }
 
-  // Get all users from the API
+  // Get all task from the API
   getAllTasks() {
     this.http.get(`${this.API}/tasks`)
       .subscribe((task : any )=> {
